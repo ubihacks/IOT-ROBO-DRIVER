@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ubihacks.robopick.MainActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:elevation="5dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_scrollFlags="scroll|enterAlways|snap">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-light"
+            android:text="Grab Robo Driver"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="24sp" />
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#111111"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_above="@+id/l"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <com.github.anastr.speedviewlib.PointerSpeedometer
+                android:id="@+id/pointerSpeedometer"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentRight="false"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="10dp"
+                app:sv_unit="Rpm"
+                app:sv_withTremble="false"
+                app:sv_backgroundCircleColor="@color/colorPrimary"
+                app:sv_centerCircleColor="#00BFA5"
+                app:sv_indicatorColor="#00BFA5"
+                app:sv_markColor="@color/accent"
+                app:sv_pointerColor="#1DE9B6"
+                app:sv_speedTextPadding="0dp"
+                app:sv_speedTextPosition="BOTTOM_CENTER"
+                app:sv_speedTextSize="18dp"
+                app:sv_speedometerColor="#A7FFEB"
+                app:sv_speedometerWidth="4dp"
+                app:sv_unitTextSize="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/l"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_above="@+id/linearLayout5"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="24dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/speedIncrease"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/accent"
+                    android:elevation="10dp"
+                    android:padding="2dp"
+                    android:text="+"
+                    android:textAllCaps="false"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:id="@+id/speedDecrease"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/accent"
+                    android:elevation="10dp"
+                    android:padding="2dp"
+                    android:text="-"
+                    android:textAllCaps="false"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="40sp" />
+
+            </LinearLayout>
+
+            <info.hoang8f.android.segmented.SegmentedGroup
+                android:id="@+id/motionDirection"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/linearLayout5"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="52dp"
+                android:layout_marginStart="52dp"
+                android:orientation="vertical"
+                app:sc_border_width="2dp"
+                app:sc_corner_radius="10dp">
+
+                <RadioButton
+                    android:id="@+id/forward"
+                    style="@style/RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:text="Forward"
+                    android:textSize="10sp" />
+
+                <RadioButton
+                    android:id="@+id/reverse"
+                    style="@style/RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:text="Reverse" />
+            </info.hoang8f.android.segmented.SegmentedGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <co.ceryle.segmentedbutton.SegmentedButtonGroup
+                    android:id="@+id/segmentedButtonGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/motionDirection"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/motionDirection"
+                    android:layout_toRightOf="@+id/motionDirection"
+                    app:sbg_animateSelector="bounce"
+                    app:sbg_animateSelectorDuration="1000"
+                    app:sbg_backgroundColor="@color/primary"
+                    app:sbg_dividerColor="@color/grey_500"
+                    app:sbg_dividerPadding="10dp"
+                    app:sbg_dividerRadius="10dp"
+                    app:sbg_dividerSize="1dp"
+                    app:sbg_position="1"
+                    app:sbg_radius="2dp"
+                    app:sbg_ripple="true"
+                    app:sbg_rippleColor="@color/grey_500"
+                    app:sbg_selectorColor="@color/grey_500"
+                    app:sbg_selectorTextColor="@color/white"
+                    app:sbg_shadow="true"
+                    app:sbg_shadowElevation="3dp"
+                    app:sbg_shadowMargin="4dp">
+
+                    <Button
+                        android:id="@+id/pick"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="10dp"
+                        android:text="pick"
+                        android:textAllCaps="false"
+                        android:textColor="@color/cardview_light_background" />
+
+                    <Button
+                        android:id="@+id/drop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="10dp"
+                        android:text="Drop"
+                        android:textAllCaps="false"
+                        android:textColor="@color/cardview_light_background" />
+
+                </co.ceryle.segmentedbutton.SegmentedButtonGroup>
+
+                <co.ceryle.segmentedbutton.SegmentedButtonGroup
+                    android:id="@+id/segmentedJar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/motionDirection"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toEndOf="@+id/motionDirection"
+                    android:layout_toRightOf="@+id/motionDirection"
+                    app:sbg_animateSelector="bounce"
+                    app:sbg_animateSelectorDuration="1000"
+                    app:sbg_backgroundColor="@color/primary"
+                    app:sbg_dividerColor="@color/grey_500"
+                    app:sbg_dividerPadding="10dp"
+                    app:sbg_dividerRadius="10dp"
+                    app:sbg_dividerSize="1dp"
+                    app:sbg_position="1"
+                    app:sbg_radius="2dp"
+                    app:sbg_ripple="true"
+                    app:sbg_rippleColor="@color/grey_500"
+                    app:sbg_selectorColor="@color/grey_500"
+                    app:sbg_selectorTextColor="@color/white"
+                    app:sbg_shadow="true"
+                    app:sbg_shadowElevation="3dp"
+                    app:sbg_shadowMargin="4dp">
+
+                    <Button
+                        android:id="@+id/open"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="10dp"
+                        android:text="Open"
+                        android:textAllCaps="false"
+                        android:textColor="@color/cardview_light_background" />
+
+                    <Button
+                        android:id="@+id/close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="10dp"
+                        android:text="Close"
+                        android:textAllCaps="false"
+                        android:textColor="@color/cardview_light_background" />
+
+                </co.ceryle.segmentedbutton.SegmentedButtonGroup>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="90dp"
+            android:layout_weight="0.91"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/motionDirection"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/leftTurn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/race"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="0.91"
+                    android:elevation="20dp"
+                    app:srcCompat="@drawable/left" />
+
+                <Button
+                    android:id="@+id/race"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:background="@drawable/race"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="10sp" />
+
+                <ImageView
+                    android:id="@+id/rightTurn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/leftTurn"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toLeftOf="@+id/race"
+                    android:layout_toStartOf="@+id/race"
+                    android:layout_weight="1"
+                    android:elevation="20dp"
+                    app:srcCompat="@drawable/right" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/stopDevice"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="25dp"
+        android:layout_toStartOf="@+id/grab"
+        android:background="@drawable/break_padal"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/currentStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="17dp"
+        android:fontFamily="monospace"
+        android:text="Status"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="30sp" />
+
+
+</RelativeLayout>
