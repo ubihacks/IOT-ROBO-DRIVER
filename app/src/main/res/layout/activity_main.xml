@@ -55,9 +55,7 @@
                 android:layout_alignParentEnd="false"
                 android:layout_alignParentRight="false"
                 android:layout_marginLeft="150dp"
-                android:layout_marginTop="10dp"
-                app:sv_unit="Rpm"
-                app:sv_withTremble="false"
+                android:padding="2dp"
                 app:sv_backgroundCircleColor="@color/colorPrimary"
                 app:sv_centerCircleColor="#00BFA5"
                 app:sv_indicatorColor="#00BFA5"
@@ -65,10 +63,12 @@
                 app:sv_pointerColor="#1DE9B6"
                 app:sv_speedTextPadding="0dp"
                 app:sv_speedTextPosition="BOTTOM_CENTER"
-                app:sv_speedTextSize="18dp"
+                app:sv_speedTextSize="10dp"
                 app:sv_speedometerColor="#A7FFEB"
                 app:sv_speedometerWidth="4dp"
-                app:sv_unitTextSize="15dp" />
+                app:sv_unit="km"
+                app:sv_unitTextSize="13dp"
+                app:sv_withTremble="false" />
         </LinearLayout>
 
         <LinearLayout
@@ -334,13 +334,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/toolbar"
-        android:layout_marginTop="17dp"
         android:fontFamily="monospace"
         android:text="Status"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/cardview_light_background"
-        android:textSize="30sp" />
+        android:textSize="20sp" />
 
 
 </RelativeLayout>

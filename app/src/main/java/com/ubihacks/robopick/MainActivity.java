@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
     Button Race,Stop,increase,decrease;
     PointerSpeedometer pointerSpeedometer;
     float i = (float) 128.0;
-    String Ip;
-    int Port;
     SegmentedGroup motion;
     String Direction;
     ConnectToDevice signal;
@@ -47,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
     SegmentedButtonGroup segmentedButtonGroup,segmentedButtonJar;
     Timer timerForward;
 
+
+    String Ip = "192.168.4.1";
+    int Port = Integer.parseInt("4210");
 
 
     @Override
@@ -75,9 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
         signal = new ConnectToDevice();
         pointerSpeedometer = (PointerSpeedometer) findViewById(R.id.pointerSpeedometer);
-
-        Ip = "192.168.4.1";
-        Port = Integer.parseInt("4210");
 
 
         pointerSpeedometer.speedTo(0);
