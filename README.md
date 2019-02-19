@@ -1,5 +1,5 @@
 # **IOT-ROBO-DRIVER** 
-(Ardino Android Socket Communication )
+Ardino Android Socket Communication
 
 
 ## UI
